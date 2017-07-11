@@ -1,0 +1,22 @@
+body {
+	color: #080808;
+	font-family: 'Press Start 2P', cursive;
+	text-align: center;
+	margin-top: 300px;
+	background: #FF0048 url("images/snake.png") no-repeat; 
+	background-blend-mode: screen;
+	background-size: 100%;
+
+}
+
+
+button {
+    background-color: #080808;
+    color: #ff9948;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px dashed #ff9948;
+    box-shadow: inset 1px 1px 1px 1px #ff9948;
+    padding: 5px 10px 5px 11px;
+}
