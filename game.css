@@ -1,19 +1,29 @@
 body {
-	width: 800px;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    margin-right: 0px;
-    margin-left: 300px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-
+	background-color: #FF0048;
+	color: #ff9948; 
+	font-family: 'Press Start 2P', cursive;
 }
 
-canvas {
-	border: 1px solid black;
-	width: 800px;
-	height: 800px;
-	
+h1 {
+	  font-size: 40px;
 }
+
+.gameBoard {
+	border: 5px solid #ff9948;
+	height: 500px;
+    width: 700px;
+    position: absolute;
+    
+}
+
+.player {
+	background-color: #fff351;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 0px;
+    left: 330px;
+    bottom: 0px;
+    top: 350px;
+}
+

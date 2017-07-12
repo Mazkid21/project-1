@@ -1,32 +1,35 @@
-var canvas = document.querySelector('canvas');
+setInterval(movePlayer, 30);
+var keys = {};
 
+// Function to make the q and p key move racers 
+$(document).keydown(function(e) {
+    keys[e.keyCode] = true;
+});
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+$(document).keyup(function(e) {
+    delete keys[e.keyCode];
+});
 
-var context = canvas.getContext('2d');
+function movePlayer() {
+    for (var direction in keys) {
+        if (!keys.hasOwnProperty(direction)) continue;
+        if (direction == 37) {
+            $(".player").animate({left: "-=5"}, 0);
+        } 
 
-context.fillRect(700,350,60,40);
+        if (direction == 38) {
+            $(".player").animate({top: "-=5"}, 0);
+        }
 
+        if (direction == 39) {
+            $(".player").animate({left: "+=5"}, 0);
+        }
 
-var FPS = 30;
+        if (direction == 40) {
+            $(".player").animate({top: "+=5"},0);
+        }
 
-setInterval(function () {
-	update();
-	draw();
-}, 1000/FPS);
-
-var contextX = 50;
-var contextY = 50; 
-
-function update() {
-	contextX += 1;
-	contextY += 1;
+    }
 }
 
-function draw () {
-	context.fillRect(contextX, contextY, 60,40);
-}
-
-
-console.log(canvas);
+console.log("wokring???");
