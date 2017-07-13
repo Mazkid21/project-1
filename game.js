@@ -40,15 +40,15 @@ function movePlayer() {
         } 
 
         if (direction == 38) {
-            $(".player").animate({top: "-=3"}, 0);
+            $(".player").css('top', position.top - 3 + 'px');
         }
 
         if (direction == 39) {
-            $(".player").animate({left: "+=3"}, 0);
+            $(".player").css('left', position.left + 3 + 'px');
         }
 
         if (direction == 40) {
-            $(".player").animate({top: "+=3"},0);
+            $(".player").css('top', position.top + 3 + 'px');
         }
 
     }
