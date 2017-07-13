@@ -68,8 +68,9 @@ h1 {
 }
 
 #win {
-    
-    margin-top: 0px;
+    position: inherit;
+    padding-top: 10px;
+    margin-top: 20px;
     height: 900px;
     text-align: center;
     background: #FF0048 url(images/snake.png) no-repeat;

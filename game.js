@@ -33,6 +33,8 @@ $("#startGame").one("click", function () {
 function movePlayer() {
     var position = $(".player").position();
 
+    checkCollisions();
+
     for (var direction in keys) {
         if (!keys.hasOwnProperty(direction)) continue;
         if (direction == 37) {
@@ -51,33 +53,87 @@ function movePlayer() {
             $(".player").css('top', position.top + 3 + 'px');
         }
 
+        
+
+
+        // if ($(".player").position.left < 3 ) {
+        // return console.log("stoppppp"); }
+
+
     }
+        
+
 
 }
 
 
+function getPositions(element) {
+    // element is some sort of html tag. <p> or <div> or whatever
+    // we need to get it's left, its top, its width, and its height
+    var left1 = element.css('left'); // THIS IS THE X 
+    var left  = element.css('left');
+    var top1 = element.css('top');
+    var top = element.css('top');
+    var width = element.css('width');
+    var height = element.css('height');
+    return [[ left1, left + width ], [ top1, top + height]];
 
+}
 
+ function comparePositions(p1, p2){
+    // p1[0][0] is p1's left boundary
+    // p1[1][0] is p1's top boundary
+    // p1[0][1] is p1's right boundary
+    // p1[1][1] is p1's bottom boundary
 
+    var p1Left = p1[0] [0];
+    var p1Top = p1[1] [0];
+    var p1Right = p1[0] [1];
+    var p1Bottom = p1[1] [1];
 
-var dim1 = {x: 5, y: 5, w: 50, h: 50};
-var dim2 = {x: 20, y: 10, w: 60, h: 40};
+    var p2Left = p2[0] [0];
+    var p2Top = p2[1] [0];
+    var p2Right = p2[0] [1];
+    var p2Bottom = p2[1] [1];
 
-var rect1 = $(".player");
+    // if p1's left boundary is greater than p2's left boundary
+    // AND p1's right boundary is less than p2's right boundary
+    // AND p1's top boundary is less than p2's top boundary
+    // AND p1's bottom boundary is more than p2's bottom boundary
+    // THEEEEEEEN p1 is inside p2
+    // return true;
 
-var rect2 = $(".gameBoard");
-
-rect2.bind("EnterFrame", function () {
-    if (rect1.x < rect2.x + rect2.w &&
-        rect1.x + rect1.w > rect2.x &&
-        rect1.y < rect2.y + rect2.h &&
-        rect1.h + rect1.y > rect2.y) {
-        // collision detected!
-        this.color("green");
-    } else {
-        // no collision
-        this.color("blue"); 
+    if (p1Left >= p2Left && p1Right <= p2Right && p1Top <= p2Top && p1Bottom >= p2Bottom) {
+        return true;
     }
-});
 
-console.log("wokring???");
+    else { 
+        return false; 
+    }
+
+    // IF NOT all that shit.
+    // return false;
+    /*
+     var x1 = p1[0] > p2[0] ? p1 : p2;
+     var x2 = p1[0] < p2[0] ? p2 : p1;
+     return x1[1] > x2[0] || x1[0] === x2[0] ? true : false;
+     */
+
+ }
+
+function checkCollisions(){
+    
+    var box = $("#game");
+
+     var pos = getPositions(box);
+
+     var player = $("#snake");
+     var pos2 = getPositions(player);
+
+     var match = comparePositions(pos, pos2);
+
+     if (match) { console.log("yayayayyayaya"); 
+ }
+ }
+
+
