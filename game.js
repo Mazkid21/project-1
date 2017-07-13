@@ -10,28 +10,7 @@ $(document).keyup(function(e) {
     delete keys[e.keyCode];
 });
 
-function movePlayer() {
-    for (var direction in keys) {
-        if (!keys.hasOwnProperty(direction)) continue;
-        if (direction == 37) {
-            $(".player").animate({left: "-=5"}, 0);
-        } 
 
-        if (direction == 38) {
-            $(".player").animate({top: "-=5"}, 0);
-        }
-
-        if (direction == 39) {
-            $(".player").animate({left: "+=5"}, 0);
-        }
-
-        if (direction == 40) {
-            $(".player").animate({top: "+=5"},0);
-        }
-
-    }
-
-}
 
 $("#startGame").one("click", function () {
     var counter = 30;
@@ -43,10 +22,42 @@ $("#startGame").one("click", function () {
             }
             if (counter === 0) {
                 clearInterval(counter);
-                return alert("game over!");
+                return  $("#game").toggleClass("gameBoard"), $("#snake").toggleClass("player"), $("#win").css('display', 'block');
             }
     }, 1000);
+
+    $("#game").toggleClass("gameBoard");
+    $("#snake").toggleClass("player");
 });
+
+function movePlayer() {
+    var position = $(".player").position();
+
+    for (var direction in keys) {
+        if (!keys.hasOwnProperty(direction)) continue;
+        if (direction == 37) {
+            $(".player").css('left', position.left - 3 + 'px');
+        } 
+
+        if (direction == 38) {
+            $(".player").animate({top: "-=3"}, 0);
+        }
+
+        if (direction == 39) {
+            $(".player").animate({left: "+=3"}, 0);
+        }
+
+        if (direction == 40) {
+            $(".player").animate({top: "+=3"},0);
+        }
+
+    }
+
+}
+
+
+
+
 
 
 var dim1 = {x: 5, y: 5, w: 50, h: 50};

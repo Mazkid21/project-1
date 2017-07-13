@@ -27,11 +27,12 @@ button {
 
 
 #play:hover {
-    background-color: #fff351;
+    background-color: #fff351; 
+    color: black;
 }
 
 #play:active {
-    background-color: #ff9948;
+    background-color: #ff9948; 
     color: black;
     box-shadow: 0 5px black;
     transform: translat

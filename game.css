@@ -2,6 +2,7 @@ body {
 	background-color: #FF0048;
 	color: #ff9948; 
 	font-family: 'Press Start 2P', cursive;
+    height: 600px;
 }
 
 h1 {
@@ -12,7 +13,7 @@ h1 {
 	border: 5px solid #ff9948;
 	height: 500px;
     width: 700px;
-    position: absolute;
+    position: relative;
     
 }
 
@@ -45,12 +46,13 @@ h1 {
 }
 
 #startGame:hover {
-	background-color: #fff351;
+    background-color: #ff9948;
+    color: black;
 }
 
 #startGame:active {
-	background-color: #ff9948;
-	color: black;
+	background-color: #fff351;
+    color: black;
 	box-shadow: 0 5px black;
 	transform: translateY(2px);
 
@@ -62,6 +64,20 @@ h1 {
     top: 55px;
     right: 530px;
     left: 150px;
+
+}
+
+#win {
+    
+    margin-top: 0px;
+    height: 900px;
+    text-align: center;
+    background: #FF0048 url(images/snake.png) no-repeat;
+    background-blend-mode: screen;
+    background-size: 100%;
+    font-size: 55px;
+    color: #fff351;
+    display: none;
 
 }
 
