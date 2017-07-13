@@ -33,17 +33,17 @@ function movePlayer() {
 
 }
 
-$("#startGame").click(function () {
+$("#startGame").one("click", function () {
     var counter = 30;
     setInterval(function() {
         counter--;
             if (counter >= 0) {
-                span = document.getElementById("count");
-                span.innerHTML = counter;
+                span = $("#count");
+                span.html(counter);
             }
             if (counter === 0) {
-                alert("game over!");
                 clearInterval(counter);
+                return alert("game over!");
             }
     }, 1000);
 });

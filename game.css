@@ -30,12 +30,38 @@ h1 {
 #startGame {
 	position: absolute;
     top: 70px;
+    background-color: #080808;
+    color: #ff9948;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #ff9948;
+    box-shadow: inset 1px 1px 1px 1px #ff9948;
+    outline: none;
+    cursor: pointer;
+    width: 134px;
+    height: 20px;
+
+}
+
+#startGame:hover {
+	background-color: #fff351;
+}
+
+#startGame:active {
+	background-color: #ff9948;
+	color: black;
+	box-shadow: 0 5px black;
+	transform: translateY(2px);
+
 }
 
 
 #count {
 	position: absolute;
     top: 55px;
-    right: 580px;
+    right: 530px;
+    left: 150px;
+
 }
 

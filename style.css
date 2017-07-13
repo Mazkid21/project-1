@@ -5,7 +5,8 @@ body {
 	margin-top: 300px;
 	background: #FF0048 url("images/snake.png") no-repeat; 
 	background-blend-mode: screen;
-	background-size: 100%;
+	background-size: 96%;
+    background-position: 
 
 }
 
@@ -20,4 +21,17 @@ button {
     box-shadow: inset 1px 1px 1px 1px #ff9948;
     padding: 5px 10px 5px 11px;
     height: 32px;
+    outline: none;
+    cursor: pointer;
 }
+
+
+#play:hover {
+    background-color: #fff351;
+}
+
+#play:active {
+    background-color: #ff9948;
+    color: black;
+    box-shadow: 0 5px black;
+    transform: translat
