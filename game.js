@@ -33,13 +33,28 @@ function movePlayer() {
 
 }
 
+$("#startGame").click(function () {
+    var counter = 30;
+    setInterval(function() {
+        counter--;
+            if (counter >= 0) {
+                span = document.getElementById("count");
+                span.innerHTML = counter;
+            }
+            if (counter === 0) {
+                alert("game over!");
+                clearInterval(counter);
+            }
+    }, 1000);
+});
+
 
 var dim1 = {x: 5, y: 5, w: 50, h: 50};
 var dim2 = {x: 20, y: 10, w: 60, h: 40};
 
-var rect1 = $(".player").toggleClass("playerC");
+var rect1 = $(".player");
 
-var rect2 = $(".player").toggleClass("playerC");
+var rect2 = $(".gameBoard");
 
 rect2.bind("EnterFrame", function () {
     if (rect1.x < rect2.x + rect2.w &&

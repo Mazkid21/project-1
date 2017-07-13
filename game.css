@@ -27,3 +27,15 @@ h1 {
     top: 350px;
 }
 
+#startGame {
+	position: absolute;
+    top: 70px;
+}
+
+
+#count {
+	position: absolute;
+    top: 55px;
+    right: 580px;
+}
+
