@@ -12,22 +12,57 @@ $(document).keyup(function(e) {
 
 
 
-$("#startGame").one("click", function () {
+$("#startGame").click(function () {
     var counter = 30;
     setInterval(function() {
         counter--;
             if (counter >= 0) {
                 span = $("#count");
                 span.html(counter);
+                $("#startGame").attr("disabled", "disabled");
             }
             if (counter === 0) {
                 clearInterval(counter);
-                return  $("#game").toggleClass("gameBoard"), $("#snake").toggleClass("player"), $("#win").css('display', 'block');
+                return  $("#game").toggleClass("gameBoard"), 
+                        $("#snake").toggleClass("player"), 
+                        $("#win").css('display', 'block'), 
+                        $("#startGame").css('display', 'none'), 
+                        $("#reload").css('display', 'block'),
+                        $("startGame").removeAttr("disabled", "disabled");
             }
     }, 1000);
 
     $("#game").toggleClass("gameBoard");
     $("#snake").toggleClass("player");
+
+});
+
+$("#reload").click(function () {
+    var counter = 30;
+    setInterval(function() {
+        counter--;
+            if (counter >= 0) {
+                span = $("#count");
+                span.html(counter);
+                $("#win").css('display', 'none');
+                $("#startGame").css('display', 'block');
+                $("#startGame").attr("disabled", "disabled");
+            }
+            if (counter === 0) {
+                clearInterval(counter);
+                return  $("#game").toggleClass("gameBoard"),
+                        $("#snake").toggleClass("player"), 
+                        $("#win").css('display', 'block'), 
+                        $("#startGame").css('display', 'none'),
+                        $("#reload").css('display', 'block'),
+                        $("#reload").removeAttr("disabled", "disabled");
+                        
+            }
+    }, 1000);
+
+    $("#game").toggleClass("gameBoard");
+    $("#snake").toggleClass("player");
+
 });
 
 function movePlayer() {
@@ -70,13 +105,23 @@ function movePlayer() {
 function getPositions(element) {
     // element is some sort of html tag. <p> or <div> or whatever
     // we need to get it's left, its top, its width, and its height
-    var left1 = element.css('left'); // THIS IS THE X 
-    var left  = element.css('left');
-    var top1 = element.css('top');
-    var top = element.css('top');
-    var width = element.css('width');
-    var height = element.css('height');
-    return [[ left1, left + width ], [ top1, top + height]];
+    
+    // var test = $("#snake").getBoundingClientRect();
+    // var testX = test.x ;
+    // var testY = test.y;
+    // var testHeight = test.height;
+    // var testWidth = test.width;
+
+    // return [[ testX, testX + testWidth], [testY, testY + testHeight]];
+
+
+     var left1 = element.css('left'); // THIS IS THE X 
+     var left  = element.css('left');
+     var top1 = element.css('top');
+     var top = element.css('top');
+     var width = element.innerWidth();
+     var height = element.innerHeight();
+      return [[ left1, left + width ], [ top1, top + height]];
 
 }
 
@@ -86,15 +131,15 @@ function getPositions(element) {
     // p1[0][1] is p1's right boundary
     // p1[1][1] is p1's bottom boundary
 
-    var p1Left = p1[0] [0];
-    var p1Top = p1[1] [0];
-    var p1Right = p1[0] [1];
-    var p1Bottom = p1[1] [1];
+    var p1Left = p1[0][0];
+    var p1Top = p1[1][0];
+    var p1Right = p1[0][1];
+    var p1Bottom = p1[1][1];
 
-    var p2Left = p2[0] [0];
-    var p2Top = p2[1] [0];
-    var p2Right = p2[0] [1];
-    var p2Bottom = p2[1] [1];
+    var p2Left = p2[0][0];
+    var p2Top = p2[1][0];
+    var p2Right = p2[0][1];
+    var p2Bottom = p2[1][1];
 
     // if p1's left boundary is greater than p2's left boundary
     // AND p1's right boundary is less than p2's right boundary
@@ -103,12 +148,14 @@ function getPositions(element) {
     // THEEEEEEEN p1 is inside p2
     // return true;
 
+    // console.log(p1Left);
+
     if (p1Left >= p2Left && p1Right <= p2Right && p1Top <= p2Top && p1Bottom >= p2Bottom) {
-        return true;
+        return console.log('true');
     }
 
     else { 
-        return false; 
+        return console.log('false') ;
     }
 
     // IF NOT all that shit.
@@ -133,6 +180,8 @@ function checkCollisions(){
      var match = comparePositions(pos, pos2);
 
      if (match) { console.log("yayayayyayaya"); 
+
+     console.log(pos);
  }
  }
 

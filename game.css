@@ -9,6 +9,8 @@ h1 {
 	  font-size: 40px;
 }
 
+
+
 .gameBoard {
 	border: 5px solid #ff9948;
 	height: 500px;
@@ -42,6 +44,7 @@ h1 {
     cursor: pointer;
     width: 134px;
     height: 20px;
+    display: block;
 
 }
 
@@ -80,5 +83,22 @@ h1 {
     color: #fff351;
     display: none;
 
+}
+
+#reload {
+    position: absolute;
+    top: 70px;
+    background-color: #080808;
+    color: #ff9948;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #ff9948;
+    box-shadow: inset 1px 1px 1px 1px #ff9948;
+    outline: none;
+    cursor: pointer;
+    width: 134px;
+    height: 20px;
+    display: none;
 }
 
