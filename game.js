@@ -36,6 +36,7 @@ $("#startGame").click(function () {
     $("#game").toggleClass("gameBoard");
     $("#snake").toggleClass("player");
     makeDiv();
+    
 
 });
 
@@ -49,6 +50,7 @@ $("#reload").click(function () {
                 $("#win").css('display', 'none');
                 $("#startGame").css('display', 'block');
                 $("#startGame").attr("disabled", "disabled");
+                
 
             }
             if (counter === 0) {
@@ -67,7 +69,7 @@ $("#reload").click(function () {
     $("#game").toggleClass("gameBoard");
     $("#snake").toggleClass("player");
     $(".player").attr('style','');
-    makeDiv();
+    
 
 });
 
@@ -169,7 +171,7 @@ function getPositions(element) {
     // console.log(p1Left);
 
     //if(p1Left >= p2Left) console.log('DFHSD');
-    if (p1Left >= p2Left && p1Right <= p2Right && p1Top >= p2Top && p1Bottom <= p2Bottom) {
+    if (p1Left <= p2Left && p1Right <= p2Right && p1Top + 40  != p2Top && p1Bottom + 40 != p2Bottom  ) {
         return  true;  // console.log('true');
     }
 
@@ -193,37 +195,80 @@ function checkCollisions(){
        // console.log(box);
 
      var pos = getPositions(player);
-        
+        console.log("player: " + pos); 
 
-     var food = $(".food");
-     //  console.log(player);
-     var pos2 = getPositions(food);
+       var food = $(".food");
+        
+      var pos2 = getPositions(food);
         console.log("food: " + pos2);
 
-     var match = comparePositions(pos2, pos);
-      //console.log(match);
+       var match = comparePositions(pos2, pos);
+        console.log(match);
 
-     if (match) {console.log("yayay"); }
+     if (match) {$(".food").removeClass("food"); updateScore(); makeDiv(); }
 
    //  console.log(pos);
- 
- }
+
+        //NOT WORKING BUT WILL WORK FOR ALL FOOD
+        //THIS IS WHAT YOU NEED TO FIX TO MAKE THE CHECK COLLISONS WORK!!!!!!!!
+          //var food = $(".food");
+             //$(".food").each(function(e) { 
+             //for (i=0; i < food.length; i++) {
+             //var pos2 = getPositions();
+             //var match = comparePositions(pos2, pos);
+             //if (match) {console.log("yayay"); }
 
  
- function makeDiv() {
-        var numRand = Math.floor(Math.random() * 501);
+ 
+
+
+}
+
+  
+  // function makeDiv() {
+  //        var numRand = Math.floor(Math.random() * 501);
         
-        var divsize = 10;
+  //        var divsize = 10;
     
-        var posx = (Math.random() * ($(".gameBoard").width() - divsize)).toFixed();
-        var posy = (Math.random() * ($(".gameBoard").height() - divsize)).toFixed();
-        $newdiv = $("<div class='food'></div>").css({
-            'left': posx + 'px',
-                'top': posy + 'px'
-        });
-        $newdiv.appendTo('.gameBoard').delay(1000).fadeIn(100, function () {
-            //$(this).remove();
-            makeDiv();
-        });
-    }
+  //        var posx = (Math.random() * ($(".gameBoard").width() - divsize)).toFixed();
+  //        var posy = (Math.random() * ($(".gameBoard").height() - divsize)).toFixed();
+  //        $newdiv = $("<div class='food'></div>").css({
+  //            'left': posx + 'px',
+  //                'top': posy + 'px'
+  //        });
+  //        $newdiv.appendTo('.gameBoard').delay(1000).fadeIn(100, function () {
+  //            //$(this).remove();
+  //            makeDiv();
+  //        });
+  //    }
+
+ 
+
+ function makeDiv() {
+         var numRand = Math.floor(Math.random() * 20);
+        
+         var divsize = 10;
+    
+         var posx = (Math.random() * ($(".gameBoard").width() - divsize)).toFixed();
+         var posy = (Math.random() * ($(".gameBoard").height() - divsize)).toFixed();
+         $newdiv = $("<div class='food'></div>").css({
+             'left': posx + 'px',
+                 'top': posy + 'px'
+         });
+         $newdiv.appendTo('.gameBoard');
+     }
+
+
+function updateScore() {
+    var score = 0 ;
+
+    var scores = score +++1;
+
+    $("#win").append(scores);
+
+
+}
+
+
+   
 
