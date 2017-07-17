@@ -84,9 +84,9 @@ h1 {
 #win {
     position: inherit;
     padding-top: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
     height: 900px;
-    text-align: center;
+    text-align: left;
     background: #FF0048 url(images/snake.png) no-repeat;
     background-blend-mode: screen;
     background-size: 100%;
@@ -138,9 +138,9 @@ h1 {
 #win2 {
     position: inherit;
     padding-top: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
     height: 900px;
-    text-align: center;
+    text-align: left;
     background: #FF0048 url(images/snake.png) no-repeat;
     background-blend-mode: screen;
     background-size: 100%;
