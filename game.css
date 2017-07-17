@@ -5,6 +5,8 @@ body {
     height: 600px;
 }
 
+
+
 h1 {
 	  font-size: 40px;
 }
@@ -78,6 +80,7 @@ h1 {
     right: 530px;
     left: 150px;
     margin-top: 17px;
+    color: black;
 
 }
 
@@ -180,5 +183,140 @@ h1 {
 
 }
 
+
+@media  (min-width: 835px) {
+    body {
+            margin-left: 100px;
+    }
+
+    #count {
+        margin-left: 100px;
+    }
+
+    .player {
+        margin-left: 100px;
+    }
+
+     #win {
+        margin-right: 105px;
+    }
+
+    #win2 {
+        margin-right: 105px;
+    }
+}
+
+@media  (min-width: 935px) {
+    body {
+            margin-left: 150px;
+    }
+
+    #count {
+        margin-left: 150px;
+    }
+
+    .player {
+        margin-left: 150px;
+    }
+
+     #win {
+        margin-right: 155px;
+    }
+
+    #win2 {
+        margin-right: 155px;
+    }
+}
+
+@media  (min-width: 1035px) {
+    body {
+            margin-left: 200px;
+    }
+
+    #count {
+        margin-left: 200px;
+    }
+
+    .player {
+        margin-left: 200px;
+    }
+
+     #win {
+        margin-right: 205px;
+    }
+
+    #win2 {
+        margin-right: 205px;
+    }
+}
+
+
+@media  (min-width: 1135px) {
+    body {
+            margin-left: 250px;
+    }
+
+    #count {
+        margin-left: 250px;
+    }
+
+    .player {
+        margin-left: 250px;
+    }
+
+     #win {
+        margin-right: 255px;
+    }
+
+    #win2 {
+        margin-right: 255px;
+    }
+}
+
+@media  (min-width: 1235px) {
+    body {
+            margin-left: 300px;
+    }
+
+    #count {
+        margin-left: 300px;
+    }
+
+    .player {
+        margin-left: 300px;
+    }
+
+     #win {
+        margin-right: 305px;
+    }
+
+    #win2 {
+        margin-right: 305px;
+    }
+
+
+}
+
+@media  (min-width: 1335px) {
+    body {
+            margin-left: 355px;
+    }
+
+    #count {
+        margin-left: 355px;
+    }
+
+    .player {
+        margin-left: 355px;
+    }
+
+    #win {
+        margin-right: 400px;
+    }
+
+    #win2 {
+        margin-right: 400px;
+    }
+}
 
 
