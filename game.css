@@ -19,41 +19,43 @@ h1 {
 .gameBoard {
 	border: 5px solid #ff9948;
 	height: 500px;
-    width: 700px;
     position: absolute;
+    width: 700px;
     
 }
 
 /* Snake styling*/
 .player {
 	background-color: #fff351;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    right: 200px;
-    left: 330px;
     bottom: 200px;
+    height: 20px;
+    left: 330px;
+    position: absolute;
+    right: 200px;
     top: 350px;
+    width: 20px;
+    
 }
 
 
 /* Start game button styling */
 #startGame {
-	position: absolute;
-    top: 70px;
+	
     background-color: #080808;
-    color: #ff9948;
-    font-family: 'Press Start 2P', cursive;
     border-radius: 15px;
-    text-align: center;
     border: 1px solid #ff9948;
     box-shadow: inset 1px 1px 1px 1px #ff9948;
-    outline: none;
     cursor: pointer;
-    width: 134px;
-    height: 20px;
+    color: #ff9948;
     display: block;
-
+    font-family: 'Press Start 2P', cursive;
+    height: 20px;
+    outline: none;
+    position: absolute;
+    text-align: center;
+    top: 70px;
+    width: 134px;
+    
 }
 
 /* Start game button hover styling*/
@@ -65,111 +67,123 @@ h1 {
 /*Start game click styling*/
 #startGame:active {
 	background-color: #fff351;
+    box-shadow: 0 5px black;
     color: black;
-	box-shadow: 0 5px black;
 	transform: translateY(2px);
 
 }
 
 /* Timer styling*/
 #count {
-	position: absolute;
-    top: 55px;
-    right: 530px;
+	
+    color: black;
     left: 150px;
     margin-top: 17px;
-    color: black;
-
+    position: absolute;
+    right: 530px;
+    top: 55px;
+    
 }
 
 /* Player 1 win message styling*/
 #win {
-    position: inherit;
-    padding-top: 10px;
-    margin-top: 30px;
-    height: 900px;
-    text-align: left;
+    
     background: #FF0048 url(images/snake.png) no-repeat;
     background-blend-mode: screen;
     background-size: 100%;
-    font-size: 55px;
     color: black;
     display: none;
-
+    font-size: 55px;
+    height: 900px;
+    margin-top: 30px;
+    position: inherit;
+    padding-top: 10px;
+    text-align: left;
+    
 }
 
 /* Player 2 button styling*/
 #reload {
-    position: absolute;
-    top: 70px;
+    
     background-color: #080808;
-    color: #ff9948;
-    font-family: 'Press Start 2P', cursive;
     border-radius: 15px;
-    text-align: center;
     border: 1px solid #ff9948;
     box-shadow: inset 1px 1px 1px 1px #ff9948;
-    outline: none;
+    color: #ff9948;
     cursor: pointer;
-    width: 134px;
-    height: 20px;
     display: none;
+    font-family: 'Press Start 2P', cursive;
+    height: 20px;
+    outline: none;
+    position: absolute;
+    top: 70px;
+    text-align: center;
+    width: 134px;
+    
 }
 
 /* PLayer 2 button hover styling*/
 #reload:hover {
+    
     background-color: #ff9948;
     color: black;
 }
 
 /* Player 2 button click styling*/
 #reload:active {
+    
     background-color: #fff351;
-    color: black;
     box-shadow: 0 5px black;
+    color: black;
     transform: translateY(2px);
 
 }
 
 /* Food styling*/
 .food {
+    
     background-color: white;
+    height: 10px;
     position: absolute;
     width: 10px;
-    height: 10px;
+    
 }
 
 /* Player 2 win message styling */
 #win2 {
-    position: inherit;
-    padding-top: 10px;
-    margin-top: 30px;
-    height: 900px;
-    text-align: left;
+    
     background: #FF0048 url(images/snake.png) no-repeat;
     background-blend-mode: screen;
     background-size: 100%;
-    font-size: 55px;
     color: black;
     display: none;
+    font-size: 55px;
+    height: 900px;
+    margin-top: 30px;
+    position: inherit;
+    padding-top: 10px;
+    text-align: left;
+    
 }
 
 /* Replay button styling*/
 #refresh {
-    position: absolute;
-    top: 70px;
+    
     background-color: #080808;
-    color: #ff9948;
-    font-family: 'Press Start 2P', cursive;
     border-radius: 15px;
-    text-align: center;
     border: 1px solid #ff9948;
     box-shadow: inset 1px 1px 1px 1px #ff9948;
-    outline: none;
+    color: #ff9948;
     cursor: pointer;
-    width: 134px;
-    height: 20px;
     display: none;
+    font-family: 'Press Start 2P', cursive;
+    height: 20px;
+    outline: none;
+    position: absolute;
+    top: 70px;
+    text-align: center;
+    width: 134px;
+    
 }
 
 /* Replay button hover styling*/
@@ -180,9 +194,10 @@ h1 {
 
 /* Replay button styling*/
 #refresh:active {
+    
     background-color: #fff351;
-    color: black;
     box-shadow: 0 5px black;
+    color: black;
     transform: translateY(2px);
 
 }
