@@ -9,28 +9,36 @@
 	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
+	<!-- Game name header -->
 	<h1>SNAKEY</h1>
+	
 	<!-- adding game board  -->
 	<div id="game"></div>
+	
 	<!-- player -->
 	<div id="snake"></div>
-
+	
+	<!-- Food div starting state -->
 	<div id="white"></div>
-	<!-- Win message div -->
-	<!-- <div id="test"></div> -->
+	
+	<!-- player 1Win message div -->
 	<div id="win">PLAYER 1'S SCORE IS 
-		<button id="reload">PLAY AGAIN</button>
+		<!-- play again button -->
+		<button id="reload">PLAYER 2</button>
 	</div>
 
+	<!-- player 2 win message div -->
 	<div id="win2">PLAYER 2'S SCORE IS 
-		
+		<!-- replay button. refreshes page -->
 		<button id="refresh">REPLAY</button>
 	</div>
+	
 	<!-- linking Javascript -->
-
 	<button id="startGame">START GAME</button>
 	<p id="count"></p>
 	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	
+	<!-- linking javascript file -->
 	<script src="game.js"></script>
 </body>
 </html>

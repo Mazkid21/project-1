@@ -1,3 +1,4 @@
+/*styling the body and background*/
 body {
 	color: #080808;
 	font-family: 'Press Start 2P', cursive;
@@ -10,6 +11,7 @@ body {
 
 }
 
+/*play button styling*/
 
 button {
     background-color: #080808;
@@ -25,11 +27,14 @@ button {
     cursor: pointer;
 }
 
+/*button hover styling*/
 
 #play:hover {
     background-color: #fff351; 
     color: black;
 }
+
+/*button click styling*/
 
 #play:active {
     background-color: #ff9948; 

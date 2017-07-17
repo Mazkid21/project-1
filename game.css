@@ -1,3 +1,6 @@
+
+
+/*Body and bakckground style */
 body {
 	background-color: #FF0048;
 	color: #ff9948; 
@@ -6,13 +9,13 @@ body {
 }
 
 
-
+/* Game name font size */
 h1 {
 	  font-size: 40px;
 }
 
 
-
+/* Game board styling */
 .gameBoard {
 	border: 5px solid #ff9948;
 	height: 500px;
@@ -21,6 +24,7 @@ h1 {
     
 }
 
+/* Snake styling*/
 .player {
 	background-color: #fff351;
     position: absolute;
@@ -32,16 +36,8 @@ h1 {
     top: 350px;
 }
 
-/*#test {
-    background-color: #fff351;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    right: 200px;
-    left: 330px;
-    bottom: 200px
-}*/
 
+/* Start game button styling */
 #startGame {
 	position: absolute;
     top: 70px;
@@ -60,11 +56,13 @@ h1 {
 
 }
 
+/* Start game button hover styling*/
 #startGame:hover {
     background-color: #ff9948;
     color: black;
 }
 
+/*Start game click styling*/
 #startGame:active {
 	background-color: #fff351;
     color: black;
@@ -73,7 +71,7 @@ h1 {
 
 }
 
-
+/* Timer styling*/
 #count {
 	position: absolute;
     top: 55px;
@@ -84,6 +82,7 @@ h1 {
 
 }
 
+/* Player 1 win message styling*/
 #win {
     position: inherit;
     padding-top: 10px;
@@ -99,6 +98,7 @@ h1 {
 
 }
 
+/* Player 2 button styling*/
 #reload {
     position: absolute;
     top: 70px;
@@ -116,11 +116,13 @@ h1 {
     display: none;
 }
 
+/* PLayer 2 button hover styling*/
 #reload:hover {
     background-color: #ff9948;
     color: black;
 }
 
+/* Player 2 button click styling*/
 #reload:active {
     background-color: #fff351;
     color: black;
@@ -129,15 +131,15 @@ h1 {
 
 }
 
+/* Food styling*/
 .food {
     background-color: white;
     position: absolute;
     width: 10px;
     height: 10px;
-    
-
 }
 
+/* Player 2 win message styling */
 #win2 {
     position: inherit;
     padding-top: 10px;
@@ -150,9 +152,9 @@ h1 {
     font-size: 55px;
     color: black;
     display: none;
-
 }
 
+/* Replay button styling*/
 #refresh {
     position: absolute;
     top: 70px;
@@ -170,11 +172,13 @@ h1 {
     display: none;
 }
 
+/* Replay button hover styling*/
 #refresh:hover {
     background-color: #ff9948;
     color: black;
 }
 
+/* Replay button styling*/
 #refresh:active {
     background-color: #fff351;
     color: black;
@@ -183,8 +187,8 @@ h1 {
 
 }
 
-
-@media  (min-width: 835px) {
+/*LOOKS GOOD BUT SCREWS UP COLLISION DETECTION */
+/*@media  (min-width: 835px) {
     body {
             margin-left: 100px;
     }
