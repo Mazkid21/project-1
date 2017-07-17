@@ -7,7 +7,7 @@ $(document).keydown(function(e) {
 });
 
 $(document).keyup(function(e) {
-    delete keys[e.keyCode];
+     keys[e.keyCode] = false;
 });
 
 
@@ -35,7 +35,9 @@ $("#startGame").click(function () {
 
     $("#game").toggleClass("gameBoard");
     $("#snake").toggleClass("player");
-    makeDiv();
+    $("#white").toggleClass("food");
+    
+    makeFood();
     
 
 });
@@ -69,6 +71,7 @@ $("#reload").click(function () {
     $("#game").toggleClass("gameBoard");
     $("#snake").toggleClass("player");
     $(".player").attr('style','');
+    makeFood();
     
 
 });
@@ -79,27 +82,53 @@ function movePlayer() {
 
     checkCollisions();
 
-    for (var direction in keys) {
-        if (!keys.hasOwnProperty(direction)) continue;
-        if (direction == 37) {
+    
+
+    
+if (keys[37]) {
             if ($(".player").css('left') != '9px') {
             $(".player").css('left', position.left - 3 + 'px');
         } }
 
-        if (direction == 38) {
+ if (keys[38]) {
             if ($(".player").css('top') != '98px') {
             $(".player").css('top', position.top - 3 + 'px');
         } }
 
-        if (direction == 39) {
+if (keys[39]) {
             if ($(".player").css('left') != '696px') {
             $(".player").css('left', position.left + 3 + 'px');
         }}
 
-        if (direction == 40) { 
+ if (keys[40]) { 
             if  ($(".player").css('top') != '578px') {
             $(".player").css('top', position.top + 3 + 'px');
         }}
+
+
+
+
+    // for (var direction in keys) {
+    //     if (!keys.hasOwnProperty(direction)) continue;
+    //     if (direction == 37) {
+    //         if ($(".player").css('left') != '9px') {
+    //         $(".player").css('left', position.left - 3 + 'px');
+    //     } }
+
+    //     if (direction == 38) {
+    //         if ($(".player").css('top') != '98px') {
+    //         $(".player").css('top', position.top - 3 + 'px');
+    //     } }
+
+    //     if (direction == 39) {
+    //         if ($(".player").css('left') != '696px') {
+    //         $(".player").css('left', position.left + 3 + 'px');
+    //     }}
+
+    //     if (direction == 40) { 
+    //         if  ($(".player").css('top') != '578px') {
+    //         $(".player").css('top', position.top + 3 + 'px');
+    //     }}
 
         
 
@@ -108,7 +137,7 @@ function movePlayer() {
         // return console.log("stoppppp"); }
 
 
-    }
+    
         
 
 
@@ -152,14 +181,19 @@ function getPositions(element) {
     var p1Left = smallerThing[0][0];
     //console.log(p1Left);
     var p1Top = smallerThing[1][0];
+    //console.log(p1Top);
     var p1Right = smallerThing[0][1];
+    //console.log(p1Right);
     var p1Bottom = smallerThing[1][1];
-
+   // console.log(p1Bottom);
     var p2Left = biggerThing[0][0];
     //console.log(p2Left);
     var p2Top = biggerThing[1][0];
+    //console.log(p2Top);
     var p2Right = biggerThing[0][1];
+    //console.log(p2Right);
     var p2Bottom = biggerThing[1][1];
+    //console.log(p2Bottom);
 
     // if p1's left boundary is greater than p2's left boundary
     // AND p1's right boundary is less than p2's right boundary
@@ -171,7 +205,17 @@ function getPositions(element) {
     // console.log(p1Left);
 
     //if(p1Left >= p2Left) console.log('DFHSD');
-    if (p1Left <= p2Left && p1Right <= p2Right && p1Top + 40  != p2Top && p1Bottom + 40 != p2Bottom  ) {
+        
+            //WORKS BUT BUGGGGGGGY 
+       // (p1Left <= p2Left && p1Right <= p2Right && p1Top + 40  != p2Top && p1Bottom + 40 != p2Bottom  )
+
+    if  (p1Left - 2 >= p2Left && p1Right + 2 <= p2Right && p1Top + 87  != p2Top && p1Bottom + 97 != p2Bottom  )
+
+        // DOESNT WORK BUT SHOULD!! NEED TO PLAY WITH THE NUMBERSSSSSS
+        //(p1Left + 10 >= p2Left && p1Right + 20 <= p2Right && p1Top + 95 >= p2Top && p1Bottom + 105 <= p2Bottom  )
+
+
+                                                                                                                 {
         return  true;  // console.log('true');
     }
 
@@ -203,9 +247,11 @@ function checkCollisions(){
         console.log("food: " + pos2);
 
        var match = comparePositions(pos2, pos);
-        console.log(match);
+       console.log(match);
 
-     if (match) {$(".food").removeClass("food"); updateScore(); makeDiv(); }
+       
+
+     if (match) {$().remove();  makeFood(); updateScore(); }
 
    //  console.log(pos);
 
@@ -244,17 +290,24 @@ function checkCollisions(){
 
  
 
- function makeDiv() {
-         var numRand = Math.floor(Math.random() * 20);
+ function makeFood() {
+         
         
          var divsize = 10;
     
          var posx = (Math.random() * ($(".gameBoard").width() - divsize)).toFixed();
          var posy = (Math.random() * ($(".gameBoard").height() - divsize)).toFixed();
-         $newdiv = $("<div class='food'></div>").css({
+         $newdiv = $(".food").css({
              'left': posx + 'px',
                  'top': posy + 'px'
          });
+
+         $newLoc = $(".food").css({
+             'left': posx + 'px',
+                 'top': posy + 'px'
+
+         });
+
          $newdiv.appendTo('.gameBoard');
      }
 
@@ -262,7 +315,7 @@ function checkCollisions(){
 function updateScore() {
     var score = 0 ;
 
-    var scores = score +++1;
+    var scores = score + 1;
 
     $("#win").append(scores);
 
