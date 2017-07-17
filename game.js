@@ -192,15 +192,15 @@ function checkCollisions(){
        // console.log(box);
 
      var pos = getPositions(player);
-        console.log("player: " + pos); 
+        // console.log("player: " + pos); 
 
        var food = $(".food");
         
       var pos2 = getPositions(food);
-        console.log("food: " + pos2);
+        // console.log("food: " + pos2);
 
        var match = comparePositions(pos2, pos);
-       console.log(match);
+       // console.log(match);
 
        
 
