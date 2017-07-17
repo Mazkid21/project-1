@@ -91,7 +91,7 @@ h1 {
     background-blend-mode: screen;
     background-size: 100%;
     font-size: 55px;
-    color: #fff351;
+    color: black;
     display: none;
 
 }
@@ -132,6 +132,51 @@ h1 {
     width: 10px;
     height: 10px;
     
+
+}
+
+#win2 {
+    position: inherit;
+    padding-top: 10px;
+    margin-top: 20px;
+    height: 900px;
+    text-align: center;
+    background: #FF0048 url(images/snake.png) no-repeat;
+    background-blend-mode: screen;
+    background-size: 100%;
+    font-size: 55px;
+    color: black;
+    display: none;
+
+}
+
+#refresh {
+    position: absolute;
+    top: 70px;
+    background-color: #080808;
+    color: #ff9948;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #ff9948;
+    box-shadow: inset 1px 1px 1px 1px #ff9948;
+    outline: none;
+    cursor: pointer;
+    width: 134px;
+    height: 20px;
+    display: none;
+}
+
+#refresh:hover {
+    background-color: #ff9948;
+    color: black;
+}
+
+#refresh:active {
+    background-color: #fff351;
+    color: black;
+    box-shadow: 0 5px black;
+    transform: translateY(2px);
 
 }
 

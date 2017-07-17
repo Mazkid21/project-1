@@ -30,7 +30,8 @@ $("#startGame").click(function () {
                         $("#reload").css('display', 'block'),
                         $("startGame").removeAttr("disabled", "disabled"),
                         $(".food").toggleClass("food"),
-                        $("#win").append(score + "!!!");
+                        $("#win").append(score + "!!!"),
+                         resetScore2();
             }
     }, 1000);
 
@@ -60,11 +61,12 @@ $("#reload").click(function () {
                 clearInterval(counter);
                 return  $("#game").toggleClass("gameBoard"),
                         $("#snake").toggleClass("player"), 
-                        $("#win").css('display', 'block'), 
+                        $("#win2").css('display', 'block'), 
                         $("#startGame").css('display', 'none'),
-                        $("#reload").css('display', 'block'),
+                        $("#refresh").css('display', 'block'),
                         $("#reload").removeAttr("disabled", "disabled"),
-                        $(".food").toggleClass("food");
+                        $(".food").toggleClass("food"),
+                        $("#win2").append(score2 + "!!!");
                         
             }
     }, 1000);
@@ -72,6 +74,8 @@ $("#reload").click(function () {
     $("#game").toggleClass("gameBoard");
     $("#snake").toggleClass("player");
     $(".player").attr('style','');
+    $("#white").toggleClass("food");
+   
     makeFood();
     
 
@@ -252,7 +256,7 @@ function checkCollisions(){
 
        
 
-     if (match) {$().remove();  makeFood(); updateScore(); }
+     if (match) {$().remove();  makeFood(); updateScore(); updateScore2(); }
 
    //  console.log(pos);
 
@@ -322,6 +326,25 @@ function updateScore() {
 
 
 }
+
+var score2 = 0 ;
+
+function updateScore2() {
+    
+        score2  += 1;
+
+    
+
+
+}
+
+function resetScore2() {
+    score2 = 0;
+}
+
+$("#refresh").click(function () {
+    location.reload();
+});
 
 
    
