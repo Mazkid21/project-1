@@ -29,7 +29,8 @@ $("#startGame").click(function () {
                         $("#startGame").css('display', 'none'), 
                         $("#reload").css('display', 'block'),
                         $("startGame").removeAttr("disabled", "disabled"),
-                        $(".food").toggleClass("food");
+                        $(".food").toggleClass("food"),
+                        $("#win").append(score + "!!!");
             }
     }, 1000);
 
@@ -209,7 +210,7 @@ function getPositions(element) {
             //WORKS BUT BUGGGGGGGY 
        // (p1Left <= p2Left && p1Right <= p2Right && p1Top + 40  != p2Top && p1Bottom + 40 != p2Bottom  )
 
-    if  (p1Left - 2 >= p2Left && p1Right + 2 <= p2Right && p1Top + 87  != p2Top && p1Bottom + 97 != p2Bottom  )
+    if  (p1Left + 5 >= p2Left && p1Right + 2 <= p2Right && p1Top + 87  != p2Top && p1Bottom + 97 != p2Bottom  )
 
         // DOESNT WORK BUT SHOULD!! NEED TO PLAY WITH THE NUMBERSSSSSS
         //(p1Left + 10 >= p2Left && p1Right + 20 <= p2Right && p1Top + 95 >= p2Top && p1Bottom + 105 <= p2Bottom  )
@@ -311,13 +312,13 @@ function checkCollisions(){
          $newdiv.appendTo('.gameBoard');
      }
 
+var score = 0 ;
 
 function updateScore() {
-    var score = 0 ;
+    
+        score  += 1;
 
-    var scores = score + 1;
-
-    $("#win").append(scores);
+    
 
 
 }
