@@ -104,6 +104,17 @@ h1 {
     
 }
 
+/*score number styling*/
+#tally {
+    
+    bottom:55px;
+    color: #fff351;
+    left: 475px;
+    position: relative;
+    text-shadow: -3px 2px 0 #080808;
+
+}
+
 /* Player 2 button styling*/
 #reload {
     
@@ -138,6 +149,16 @@ h1 {
     box-shadow: 0 5px black;
     color: black;
     transform: translateY(2px);
+
+}
+
+#tally2 {
+    
+    bottom:55px;
+    color: #ff0048;
+    left: 475px;
+    position: relative;
+    text-shadow: -3px 2px 0 #080808;
 
 }
 

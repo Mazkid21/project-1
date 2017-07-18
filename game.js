@@ -32,7 +32,7 @@ $("#startGame").click(function () {
                         $("#reload").css('display', 'block'),
                         $("startGame").removeAttr("disabled", "disabled"),
                         $(".food").toggleClass("food"),
-                        $("#win").append(score + "!!!"),
+                        $("#tally").append(score + "!"),
                          resetScore2();
             }
     }, 1000);
@@ -72,7 +72,8 @@ $("#reload").click(function () {
                         $("#reload").removeAttr("disabled", "disabled"),
                         $(".food").toggleClass("food"),
                         $('#game').css('border', ''),
-                        $("#win2").append(score2 + "!!!");
+                        $("#tally2").append(score2 + "!!!");
+
                         
             }
     }, 1000);
@@ -175,7 +176,7 @@ function getPositions(element) {
        // (p1Left <= p2Left && p1Right <= p2Right && p1Top + 40  != p2Top && p1Bottom + 40 != p2Bottom  )
 
        // if snake is over food return true
-    if  (p1Left + 10 >= p2Left && p1Right + 1 <= p2Right && p1Top + 97  >= p2Top && p1Bottom + 100 <= p2Bottom )
+    if  (p1Left + 10 >= p2Left && p1Right + 5 <= p2Right && p1Top + 97  >= p2Top && p1Bottom + 100 <= p2Bottom )
 
         // DOESNT WORK BUT SHOULD!! NEED TO PLAY WITH THE NUMBERSSSSSS
         //(p1Left + 10 >= p2Left && p1Right + 20 <= p2Right && p1Top + 95 >= p2Top && p1Bottom + 105 <= p2Bottom  )
