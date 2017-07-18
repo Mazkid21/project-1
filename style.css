@@ -4,11 +4,11 @@ body {
     background: #FF0048 url("images/snake.png") no-repeat; 
     background-blend-mode: screen;
     background-size: 96%;
-    background-position: 
     color: #080808;
 	font-family: 'Press Start 2P', cursive;
 	margin-top: 300px;
     text-align: center;
+
 
 }
 
@@ -31,6 +31,19 @@ button {
     
 }
 
+h1 {
+
+text-shadow: -3px 2px 0 #fff351;
+
+}
+
+p {
+
+text-shadow: -2px 1px 0 #ff9948;
+
+
+}
+
 /*button hover styling*/
 
 #play:hover {
@@ -47,3 +60,4 @@ button {
     transform: translate();
 
 }
+

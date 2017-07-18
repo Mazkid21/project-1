@@ -71,6 +71,7 @@ $("#reload").click(function () {
                         $("#refresh").css('display', 'block'),
                         $("#reload").removeAttr("disabled", "disabled"),
                         $(".food").toggleClass("food"),
+                        $('#game').css('border', ''),
                         $("#win2").append(score2 + "!!!");
                         
             }
@@ -80,6 +81,12 @@ $("#reload").click(function () {
     $("#snake").toggleClass("player");
     $(".player").attr('style','');
     $("#white").toggleClass("food");
+    $(".title").css('color', '#ff0048');
+    $("body").css('background-color', '#ff9948');
+    $("#startGame").css('color', '#ff0048');
+    $(".player").css('background-color', 'white');
+    $('.food').css('background-color', '#fff351');
+    $('.gameBoard').css('border', '5px solid #ff0048');
    
     makeFood();
     
@@ -168,7 +175,7 @@ function getPositions(element) {
        // (p1Left <= p2Left && p1Right <= p2Right && p1Top + 40  != p2Top && p1Bottom + 40 != p2Bottom  )
 
        // if snake is over food return true
-    if  (p1Left + 5 >= p2Left && p1Right + 2 <= p2Right && p1Top + 87  != p2Top && p1Bottom + 97 != p2Bottom  )
+    if  (p1Left + 10 >= p2Left && p1Right + 1 <= p2Right && p1Top + 97  >= p2Top && p1Bottom + 100 <= p2Bottom )
 
         // DOESNT WORK BUT SHOULD!! NEED TO PLAY WITH THE NUMBERSSSSSS
         //(p1Left + 10 >= p2Left && p1Right + 20 <= p2Right && p1Top + 95 >= p2Top && p1Bottom + 105 <= p2Bottom  )
@@ -192,19 +199,19 @@ function checkCollisions(){
        // console.log(box);
 
      var pos = getPositions(player);
-        // console.log("player: " + pos); 
+         console.log("player: " + pos); 
 
        var food = $(".food");
         
       var pos2 = getPositions(food);
-        // console.log("food: " + pos2);
+         console.log("food: " + pos2);
 
        var match = comparePositions(pos2, pos);
        // console.log(match);
 
        
 
-     if (match) {$().remove();  makeFood(); updateScore(); updateScore2(); }
+     if (match) { makeFood(); updateScore(); updateScore2(); }
 
    //  console.log(pos);
 

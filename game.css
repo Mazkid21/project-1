@@ -99,6 +99,8 @@ h1 {
     position: inherit;
     padding-top: 10px;
     text-align: left;
+    text-shadow: -3px 2px 0 #fff351;
+    width: 900px;
     
 }
 
@@ -152,7 +154,7 @@ h1 {
 /* Player 2 win message styling */
 #win2 {
     
-    background: #FF0048 url(images/snake.png) no-repeat;
+    background: #ff9948 url(images/snake.png) no-repeat;
     background-blend-mode: screen;
     background-size: 100%;
     color: black;
@@ -163,6 +165,8 @@ h1 {
     position: inherit;
     padding-top: 10px;
     text-align: left;
+    text-shadow: -3px 2px 0 #fff351;
+    width: 900px;
     
 }
 
