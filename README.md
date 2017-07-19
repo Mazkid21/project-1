@@ -4,6 +4,8 @@ or set a timer and have each player go one at a time. The game functionality wil
 
 https://trello.com/b/t32ZpS4c/project-1
 
+https://mazkid21.github.io/project-1/
+
 
 JOURNAL: 
 
