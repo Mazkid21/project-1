@@ -176,7 +176,7 @@ function getPositions(element) {
        // (p1Left <= p2Left && p1Right <= p2Right && p1Top + 40  != p2Top && p1Bottom + 40 != p2Bottom  )
 
        // if snake is over food return true
-    if  (p1Left + 10 >= p2Left && p1Right + 5 <= p2Right && p1Top + 97  >= p2Top && p1Bottom + 100 <= p2Bottom )
+    if  (p1Left + 13 >= p2Left && p1Right + 5 <= p2Right && p1Top + 99  >= p2Top && p1Bottom + 100 <= p2Bottom )
 
         // DOESNT WORK BUT SHOULD!! NEED TO PLAY WITH THE NUMBERSSSSSS
         //(p1Left + 10 >= p2Left && p1Right + 20 <= p2Right && p1Top + 95 >= p2Top && p1Bottom + 105 <= p2Bottom  )
