@@ -72,7 +72,7 @@ $("#reload").click(function () {
                         $("#reload").removeAttr("disabled", "disabled"),
                         $(".food").toggleClass("food"),
                         $('#game').css('border', ''),
-                        $("#tally2").append(score2 + "!!!");
+                        $("#tally2").append(score2 + "!");
 
                         
             }
@@ -106,7 +106,7 @@ function movePlayer() {
 
     
 if (keys[37]) {
-            if ($(".player").css('left') != '9px') {
+            if ($(".player").css('left') != '12px') {
             $(".player").css('left', position.left - 3 + 'px');
         } }
 
@@ -116,7 +116,7 @@ if (keys[37]) {
         } }
 
 if (keys[39]) {
-            if ($(".player").css('left') != '696px') {
+            if ($(".player").css('left') != '693px') {
             $(".player").css('left', position.left + 3 + 'px');
         }}
 
@@ -171,7 +171,7 @@ function getPositions(element) {
     var p2Bottom = biggerThing[1][1];
     //console.log(p2Bottom);
 
-
+        
 
        // if snake is over food return true
     if  (p1Left + 13 >= p2Left && p1Right + 5 <= p2Right && p1Top + 99  >= p2Top && p1Bottom + 100 <= p2Bottom )
