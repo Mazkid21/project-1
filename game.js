@@ -106,7 +106,7 @@ function movePlayer() {
 
     
 if (keys[37]) {
-            if ($(".player").css('left') != '9px') {
+            if ($(".player").css('left') != '12px') {
             $(".player").css('left', position.left - 3 + 'px');
         } }
 
@@ -116,7 +116,7 @@ if (keys[37]) {
         } }
 
 if (keys[39]) {
-            if ($(".player").css('left') != '696px') {
+            if ($(".player").css('left') != '693px') {
             $(".player").css('left', position.left + 3 + 'px');
         }}
 
